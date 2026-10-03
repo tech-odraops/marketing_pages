@@ -1,0 +1,31 @@
+name: Deploy MarketingPages on Hostinger
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest   #the server image where the commands will run .Specifies the virtual machine or agent type where the commands run (e.g., ubuntu-latest or vmImage: 'vs2017-win2016').
+
+        steps:
+            - name: Checkout Code
+              uses: actions/checkout@v4
+
+            - name: Deploy Via SSH
+              uses: appleboy/ssh-action@v1.0.3
+              with:
+                host: ${{secrets.SSH_HOST}}
+                username : ${{secrets.USER_NAME}}
+                key: ${{secrets.PUB_KEY}}
+                script : 
+                    cd /root/MarketingPages
+                    git pull 
+                    cd /root/MarketingPages/Frontend
+                    npm run build
+                    cd /root/MarketingPages/Backend
+                    node index.js
+
+
+            
