@@ -1,0 +1,42 @@
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { inputsCustomizations } from './customizations/inputs';
+import { dataDisplayCustomizations } from './customizations/dataDisplay';
+import { feedbackCustomizations } from './customizations/feedback';
+import { navigationCustomizations } from './customizations/navigation';
+import { surfacesCustomizations } from './customizations/surfaces';
+import { colorSchemes, typography, shape } from './themePrimitives';
+
+const lightColorSchemes = {
+  light: colorSchemes.light,
+};
+
+function AppTheme({ children }) {
+  const theme = React.useMemo(() => {
+    return createTheme({
+      cssVariables: {
+        colorSchemeSelector: 'data-mui-color-scheme',
+        cssVarPrefix: 'template',
+      },
+      colorSchemes: lightColorSchemes,
+      typography,
+      shape,
+      components: {
+        ...inputsCustomizations, //comment this to controll the input elemtts
+        ...dataDisplayCustomizations,
+        ...feedbackCustomizations,
+        ...navigationCustomizations,
+        ...surfacesCustomizations
+      },
+    });
+  }, []);
+
+  return (
+    <ThemeProvider theme={theme}>
+      {children}
+    </ThemeProvider>
+  );
+}
+
+export default AppTheme;
