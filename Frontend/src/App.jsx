@@ -7,8 +7,6 @@ import "react-toastify/dist/ReactToastify.css";
 
 import AdminRoute from "./utils/AdminRoute";
 
-const Home = lazy(() => import("./Screen/Home"));
-const Contact = lazy(() => import("./Screen/Contact"));
 const Waitlist = lazy(() => import("./Screen/Waitlist"));
 
 const AdminDashboard = lazy(() =>
@@ -41,9 +39,7 @@ function App() {
       <ErrorBoundary>
         <Suspense fallback={<FullScreenLoader />}>
           <Routes>
-            <Route path="/Contact-Us" element={<Contact />} />
-            <Route path="/" element={<Home />} />
-            <Route path="/home" element={<Home />} />
+            <Route path="/" element={<Waitlist />} />
             <Route path="/waitlist" element={<Waitlist />} />
             <Route path="/admin/login" element={<SignInSide />} />
             <Route

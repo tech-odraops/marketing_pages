@@ -1,7 +1,6 @@
 import React from "react";
 import { Box, Button, Container, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
-import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
 import AssignmentOutlinedIcon from "@mui/icons-material/AssignmentOutlined";
@@ -22,7 +21,6 @@ const features = [
 export default function Home() {
   return (
     <div className="home-page">
-      <Navbar />
       <main>
         <Box className="home-hero" style={{ "--home-bg": `url("${heroBg}")` }}>
           <Container maxWidth="xl" className="home-hero-inner">
