@@ -3,11 +3,13 @@ name: Marketing CI
 on:
   pull_request:
     branches:
-      - main
+        - dev
+        - main
 
   push:
     branches:
-      - main
+        - dev
+        - main
 
 jobs:
   frontend:
