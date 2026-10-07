@@ -29,7 +29,7 @@ jobs:
 
             cd Backend
             npm ci
-            pm2 restart odra-marketing-backend --update-env
+            sudo pm2 restart odra-marketing-backend --update-env
 
             cd ../Frontend
             npm ci
