@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 import axiosInstance from "../utils/axiosInstance";
-import villaImage from "../assets/Monochrome Construction-Phase Villa with Reflecting Pool.png";
+import heroVideo from "../assets/Hero Video.mp4";
 
 const fieldIcons = {
   company: <svg viewBox="0 0 24 24"><path d="M4 21V5a2 2 0 0 1 2-2h9v18M4 21h16M8 7h3m-3 4h3m-3 4h3m7-3v9m-3-6h3" /></svg>,
@@ -76,7 +76,7 @@ export default function Waitlist() {
               )}
             </div>
           </section>
-          <div className="waitlist-visual"><img src={villaImage} alt="Monochrome construction phase villa with reflecting pool" /></div>
+          <div className="waitlist-visual"><video src={heroVideo} autoPlay muted loop playsInline aria-label="ODRAOPS construction hero video" /></div>
         </div>
       </div>
     </main>
