@@ -2,7 +2,7 @@ const path = require('path');
 require('dotenv').config({ path: path.join(__dirname, '.env') });
 const express = require('express')
 const app = express();
-const port = 8080;
+const port = process.env.PORT || 8081;
 const connectDb = require("./databaseConnect");
 const cors = require('cors')
 const adminRoutes = require("./routes/adminRoutes");
