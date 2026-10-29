@@ -683,8 +683,11 @@ main,
           .waitlist-page { height: auto; min-height: 100vh; min-height: 100svh; overflow-x: hidden; overflow-y: auto; }
           .waitlist-shell { width: min(calc(100% - 36px), 460px); height: auto; min-height: 100vh; min-height: 100svh; padding: 22px 0 28px; }
           .waitlist-brand { margin-bottom: 28px; font-size: 24px; }
-          .waitlist-layout { flex: none; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto; gap: 28px; min-height: 0; }
-          .waitlist-copy { width: 100%; }
+          .waitlist-layout { display: flex; flex: none; flex-direction: column; gap: 24px; min-height: 0; }
+          .waitlist-copy { display: contents; }
+          .waitlist-label, .waitlist-headline, .waitlist-description { order: 1; }
+          .waitlist-visual { order: 2; }
+          .waitlist-card { order: 3; }
           .waitlist-label { gap: 12px; margin-left: 0; }
           .waitlist-accent-line { flex: 0 0 30px; }
           .waitlist-kicker { font-size: 11px; letter-spacing: 2.4px; }
